@@ -257,7 +257,7 @@ export default function MemberWidget() {
 
           <div className="flex-1 overflow-y-auto px-8 pb-20 custom-scrollbar scroll-visible">
             <motion.div
-              initial="hidden"
+              initial={false}
               animate="visible"
               variants={{ visible: { transition: { staggerChildren: 0.04 } } }}
               className="space-y-0.5"
