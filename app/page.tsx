@@ -2,7 +2,8 @@ import Hero from "@/components/hero";
 import ProductBenefits from "@/components/product-benefits";
 import Footer from "@/components/footer";
 import ShakeTestimonial from "@/registry/default/example/shake-testimonial-card";
-import Testimonial from "@/components/testimonial";
+import Testimonial from "@/components/empty-testimonial";
+import StackedList from "@/registry/default/example/stacked-list";
 
 export default function Page() {
   return (
@@ -11,6 +12,9 @@ export default function Page() {
       <ProductBenefits />
       <Testimonial />
       <Footer />
+
+      {/* <Testimonial /> */}
+      <StackedList />
     </main>
   );
 }
