@@ -18,6 +18,10 @@ const config = {
         protocol: "https",
         hostname: "pbs.twimg.com",
       },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
     ],
   },
 };
