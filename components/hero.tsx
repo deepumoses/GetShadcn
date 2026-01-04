@@ -42,7 +42,7 @@ const Hero = () => {
       >
         <div className="absolute inset-0 z-0 ">
           <Image
-            src="/background.png"
+            src="https://raw.githubusercontent.com/iurvish/uselayouts/refs/heads/main/public/background.png"
             alt="Background"
             fill
             className="object-cover"
