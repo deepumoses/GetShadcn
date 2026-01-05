@@ -7,14 +7,10 @@ import Bento2 from "@/components/todo/bento-2";
 export default function Page() {
   return (
     <main className="min-h-screen light bg-white font-[family-name:var(--font-geist-sans)]">
-      {/* <Hero />
+      <Hero />
       <Testimonial />
       <ProductBenefits />
-      <Footer /> */}
-
-      <div className="flex items-center justify-center min-h-screen">
-        <Bento2 />
-      </div>
+      <Footer />
     </main>
   );
 }
