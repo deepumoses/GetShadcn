@@ -8,12 +8,20 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { SourceCode } from "@/components/source-code";
 import { ComponentPreview } from "@/components/component-preview";
 
+import { Suspense } from "react";
+
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview name="magnified-bento" size="lg" />
   </Tab>
   <Tab value="Code">
-    <SourceCode name="magnified-bento" />
+    <Suspense
+      fallback={
+        <div className="h-[400px] w-full animate-pulse bg-fd-muted rounded-xl" />
+      }
+    >
+      <SourceCode name="magnified-bento" />
+    </Suspense>
   </Tab>
 </Tabs>
 
