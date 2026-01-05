@@ -422,6 +422,41 @@
       ]
     },
     {
+      "name": "bucket",
+      "type": "registry:component",
+      "title": "Bucket",
+      "description": "An interactive card component that simulates a bucket where chips are tossed and replaced with smooth physics-inspired animations.",
+      "dependencies": [
+        "motion",
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/default/example/bucket.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "bucket-demo",
+      "type": "registry:component",
+      "title": "Bucket Demo",
+      "description": "Bucket component demo.",
+      "files": [
+        {
+          "path": "registry/default/demo/bucket-demo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "fluid-expanding-grid",
       "type": "registry:component",
       "title": "Fluid Expanding Grid",

@@ -44,17 +44,8 @@ function StickyTOC({ toc }: { toc: TOCItemType[] }) {
 export function DocsPage({ toc = [], ...props }: DocsPageProps) {
   return (
     <AnchorProvider toc={toc}>
-      <div className="flex flex-1 flex-col min-w-0">
-        <StickyTOC toc={toc} />
-        <main className="flex w-full min-w-0 flex-col flex-1">
-          <article className="flex flex-1 flex-col w-full max-w-[860px] gap-6 px-4 py-8 md:px-6 md:mx-auto min-w-0">
-            {props.children}
-            <Footer />
-          </article>
-        </main>
-      </div>
       {toc.length > 0 && (
-        <div className="sticky top-14  shrink-0 h-[calc(100dvh-3.5rem)] pt-8 pb-4 pr-4 overflow-y-auto max-xl:hidden">
+        <div className="sticky top-14 shrink-0 h-[calc(100dvh-3.5rem)] pt-8 pb-4 pr-4 overflow-y-auto max-xl:hidden xl:order-last">
           <p className="text-sm text-fd-muted-foreground mb-2 px-2">
             On this page
           </p>
@@ -65,6 +56,15 @@ export function DocsPage({ toc = [], ...props }: DocsPageProps) {
           </div>
         </div>
       )}
+      <div className="flex flex-1 flex-col min-w-0">
+        <StickyTOC toc={toc} />
+        <main className="flex w-full min-w-0 flex-col flex-1">
+          <article className="flex flex-1 flex-col w-full max-w-[860px] gap-6 px-4 py-8 md:px-6 md:mx-auto min-w-0">
+            {props.children}
+            <Footer />
+          </article>
+        </main>
+      </div>
     </AnchorProvider>
   );
 }
