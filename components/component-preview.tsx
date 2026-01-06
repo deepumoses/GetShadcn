@@ -28,16 +28,13 @@ export function ComponentPreview({
 
   return (
     <div
-      className={cn(
-        "relative flex flex-col w-full rounded-xl border border-fd-border",
-        className
-      )}
+      className={cn("relative flex flex-col w-full rounded-xl  p-0", className)}
       {...props}
     >
       <div
         className={cn(
-          "relative flex w-full overflow-hidden light bg-[#F0F0F0] text-foreground rounded-xl",
-          !full ? "p-4 md:p-10 min-h-[400px]" : "p-0 min-h-[300px]",
+          "relative flex w-full overflow-hidden  text-foreground rounded-xl",
+          !full ? " min-h-[400px]" : "p-0 min-h-[300px]",
           align === "center" && "items-center justify-center",
           align === "start" && "items-start justify-center",
           align === "end" && "items-end justify-center"

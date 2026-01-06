@@ -56,7 +56,7 @@ export default function InteractiveBook() {
     pages.push(
       <div
         key={i}
-        className="absolute h-48 md:h-72 w-32 md:w-52 rounded-lg md:rounded-2xl border border-border bg-background"
+        className="absolute h-48 md:h-72 w-32 md:w-52 rounded-lg md:rounded-2xl border border-border bg-background light"
         style={
           {
             transformStyle: "preserve-3d",

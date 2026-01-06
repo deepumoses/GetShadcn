@@ -53,7 +53,7 @@ const BucketDemo = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center min-h-[400px] w-full not-prose">
+    <div className="flex flex-col gap-4 items-center justify-center min-h-[400px] w-full not-prose light">
       <div
         className="relative isolate w-full max-w-[500px]"
         style={{ aspectRatio: "655/352" }}
