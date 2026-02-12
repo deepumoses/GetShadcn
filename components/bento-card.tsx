@@ -45,7 +45,7 @@ const TABS: TabConfig[] = [
     icon: UserGroupIcon,
     header: "Team Management",
     description: "Manage roles and user permissions.",
-    badge: "3",
+    badge: "10",
   },
   {
     id: "threads",
@@ -85,20 +85,20 @@ const BentoCard = () => {
   return (
     <div className="flex items-center justify-center w-full not-prose p-4 min-h-screen antialiased">
       <div className="group relative w-full max-w-xl overflow-hidden rounded-3xl sm:rounded-4xl border bg-card shadow-2xl shadow-primary/5 transition-all duration-500 hover:shadow-primary/10 hover:-translate-y-1 m-0">
-        <div className="p-4 sm:p-6 space-y-2 z-10 relative">
-          <h2 className="text-xs text-muted-foreground uppercase tracking-wider">
+        <div className="p-4 sm:p-6 space-y-1.5 z-10 relative">
+          <h2 className="text-xs text-muted-foreground uppercase ">
             Project Dashboard
           </h2>
-          <p className="text-lg sm:text-xl text-foreground font-medium leading-snug max-w-[480px]">
+          <p className="text-lg sm:text-2xl text-foreground font-medium leading-snug max-w-[480px]">
             High-performance analytics and team collaboration tools in one
             place.
           </p>
         </div>
 
         <div className="relative w-full h-[260px] sm:h-[300px] overflow-hidden rounded-2xl sm:rounded-[2rem] ">
-          <div className="absolute top-18 left-18 w-full h-full bg-muted rounded-3xl border border-border/50 opacity-80" />
+          <div className="absolute top-16 left-18 w-full h-full bg-muted rounded-3xl border border-border/50 opacity-80" />
 
-          <div className="absolute top-10 left-24 w-full h-full bg-background rounded-tl-3xl border-t border-l border-border/70 shadow-xl flex flex-col overflow-hidden ">
+          <div className="absolute top-8 left-24 w-full h-full bg-background rounded-tl-3xl border-t border-l border-border/70 shadow-xl flex flex-col overflow-hidden ">
             <div className="px-5 py-4 rounded-tl-3xl border-b border-border/70 flex items-center relative backdrop-blur-sm">
               <div className="flex gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-muted-foreground/20" />
@@ -106,7 +106,7 @@ const BentoCard = () => {
                 <div className="w-2 h-2 rounded-full bg-muted-foreground/20" />
               </div>
               <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
-                <span className="text-[10px]  text-muted-foreground/50  uppercase">
+                <span className="text-xs  text-muted-foreground/50  uppercase">
                   Workspace
                 </span>
               </div>
@@ -124,7 +124,7 @@ const BentoCard = () => {
                         key={tab.id}
                         onClick={() => setActiveTab(tab)}
                         className={cn(
-                          "relative flex items-center gap-2.5 p-2 rounded-xl text-[11px] transition-colors",
+                          "relative flex items-center gap-1.5 p-2 rounded-xl text-xs transition-colors cursor-pointer",
                           isActive
                             ? "text-foreground"
                             : "text-muted-foreground hover:text-foreground",
@@ -179,7 +179,6 @@ const BentoCard = () => {
                 </LayoutGroup>
               </div>
 
-              {/* Functional Display Area */}
               <div className="flex-1 bg-background p-5 pt-6 flex flex-col gap-4 overflow-hidden relative">
                 <header className="flex flex-col gap-0.5">
                   <h3 className="text-xs font-semibold text-foreground tracking-tight line-clamp-1 uppercase opacity-60">
@@ -190,12 +189,12 @@ const BentoCard = () => {
                   </p>
                 </header>
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout" initial={false}>
                   <motion.div
                     key={activeTab.id}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
+                    initial={{ opacity: 0, y: 8, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
                     transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                     className="flex-1"
                   >
