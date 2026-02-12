@@ -8,11 +8,10 @@ import BentoCard from "@/components/bento-card";
 export default function Page() {
   return (
     <main className="min-h-screen light bg-white font-[family-name:var(--font-geist-sans)]">
-      {/* <Hero />
+      <Hero />
       <Testimonial />
       <ProductBenefits />
-      <Footer /> */}
-      <BentoCard />
+      <Footer />
     </main>
   );
 }

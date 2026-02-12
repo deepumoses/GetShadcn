@@ -83,7 +83,7 @@ const BentoCard = () => {
   }, [activeTab.id]);
 
   return (
-    <div className="flex items-center justify-center w-full p-4 antialiased">
+    <div className="flex items-center justify-center w-full  antialiased">
       <div className="group relative w-full max-w-xl overflow-hidden rounded-3xl sm:rounded-4xl border bg-card shadow-2xl shadow-primary/5 transition-all duration-500 hover:shadow-primary/10 hover:-translate-y-1 m-0">
         <div className="p-4 sm:p-6 space-y-1.5 z-10 relative">
           <h2 className="text-xs text-muted-foreground uppercase ">
@@ -135,7 +135,7 @@ const BentoCard = () => {
                           size={14}
                           className="z-20 shrink-0 relative"
                         />
-                        <span className="truncate z-20 leading-none mt-px relative font-medium">
+                        <span className="truncate z-20 relative font-medium">
                           {tab.label}
                         </span>
                         {tab.badge && (
