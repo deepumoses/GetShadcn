@@ -28,7 +28,10 @@ export function ComponentPreview({
 
   return (
     <div
-      className={cn("relative flex flex-col w-full rounded-xl  p-0", className)}
+      className={cn(
+        "relative flex flex-col w-full rounded-xl not-prose leading-normal text-base text-foreground p-0",
+        className,
+      )}
       {...props}
     >
       <div
@@ -37,7 +40,7 @@ export function ComponentPreview({
           !full ? " min-h-[400px]" : "p-0 min-h-[300px]",
           align === "center" && "items-center justify-center",
           align === "start" && "items-start justify-center",
-          align === "end" && "items-end justify-center"
+          align === "end" && "items-end justify-center",
         )}
       >
         <React.Suspense

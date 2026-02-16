@@ -83,7 +83,7 @@ const BentoCard = () => {
   }, [activeTab.id]);
 
   return (
-    <div className="flex items-center justify-center w-full  antialiased">
+    <div className="flex items-center justify-center w-full antialiased">
       <div className="group relative w-full max-w-xl overflow-hidden rounded-3xl sm:rounded-4xl border bg-card shadow-2xl shadow-primary/5 transition-all duration-500 hover:shadow-primary/10 hover:-translate-y-1 m-0">
         <div className="p-4 sm:p-6 space-y-1.5 z-10 relative">
           <h2 className="text-xs text-muted-foreground uppercase ">
@@ -277,7 +277,7 @@ const OverviewDashboard = () => (
 );
 
 const ManagementDashboard = () => (
-  <div className="flex flex-col h-full">
+  <div className="flex flex-col h-full not-prose">
     <div className="rounded-xl border border-border/40 overflow-hidden flex flex-col h-full bg-background/50">
       <div className="bg-muted/30 px-3 py-2 border-b border-border/40 flex items-center justify-between">
         <span className="text-[9px] font-semibold text-muted-foreground uppercase tracking-wider">
