@@ -71,7 +71,7 @@ export function DocsPage({ toc = [], ...props }: DocsPageProps) {
 
 export function DocsBody(props: ComponentProps<"div">) {
   return (
-    <div {...props} className={cn("", props.className)}>
+    <div {...props} className={cn("prose", props.className)}>
       {props.children}
     </div>
   );
