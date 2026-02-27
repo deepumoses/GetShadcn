@@ -8,7 +8,7 @@ import { Loader2, ArrowRight } from "lucide-react"
 
 // Use HTMLMotionProps instead of React.ButtonHTMLAttributes to avoid conflicts with onDrag
 interface ButtonProps extends HTMLMotionProps<"button"> {
-  variant?: "magnetic" | "shine" | "loading-morph" | "expandable-icon" | "3d-press" | "default"
+  variant?: "magnetic" | "shine" | "loading-morph" | "expandable-icon" | "3d-press" | "glitch" | "pulse-ring" | "slide-fill" | "default"
   children: React.ReactNode
   isLoading?: boolean
 }
@@ -170,6 +170,94 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           {...props}
         >
           {children}
+        </motion.button>
+      )
+    }
+
+    if (variant === "glitch") {
+      return (
+        <motion.button
+          ref={ref as React.Ref<HTMLButtonElement>}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={cn(
+            "relative px-6 py-2 bg-black text-white rounded-md overflow-hidden group",
+            className
+          )}
+          {...props}
+        >
+          <span className="relative z-10">{children}</span>
+          <motion.div
+            className="absolute inset-0 bg-red-500 opacity-0 group-hover:opacity-50"
+            animate={{ x: [-2, 2, -2] }}
+            transition={{ duration: 0.2, repeat: Infinity }}
+            style={{ mixBlendMode: "multiply" }}
+          />
+          <motion.div
+            className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-50"
+            animate={{ x: [2, -2, 2] }}
+            transition={{ duration: 0.2, repeat: Infinity }}
+            style={{ mixBlendMode: "multiply" }}
+          />
+        </motion.button>
+      )
+    }
+
+    if (variant === "pulse-ring") {
+      return (
+        <motion.button
+          ref={ref as React.Ref<HTMLButtonElement>}
+          className={cn(
+            "relative px-6 py-2 bg-primary text-primary-foreground rounded-full",
+            className
+          )}
+          whileHover="hover"
+          {...props}
+        >
+          <motion.span
+            className="absolute inset-0 rounded-full border-2 border-primary"
+            variants={{
+              hover: {
+                scale: 1.5,
+                opacity: 0,
+                transition: { duration: 1, repeat: Infinity }
+              }
+            }}
+          />
+          {children}
+        </motion.button>
+      )
+    }
+
+    if (variant === "slide-fill") {
+       return (
+        <motion.button
+          ref={ref as React.Ref<HTMLButtonElement>}
+          className={cn(
+            "relative px-6 py-2 border-2 border-primary text-primary bg-transparent rounded-md overflow-hidden",
+            className
+          )}
+          initial="initial"
+          whileHover="hover"
+          {...props}
+        >
+          <motion.div
+            className="absolute inset-0 bg-primary z-0"
+            variants={{
+              initial: { x: "-100%" },
+              hover: { x: 0 }
+            }}
+            transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
+          />
+          <motion.span
+            className="relative z-10"
+            variants={{
+               initial: { color: "var(--primary)" }, // This might need explicit color values if CSS vars aren't resolving in animation
+               hover: { color: "#ffffff" }
+            }}
+          >
+            {children}
+          </motion.span>
         </motion.button>
       )
     }

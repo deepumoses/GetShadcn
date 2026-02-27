@@ -11,7 +11,7 @@ interface TabProps {
 
 interface SharedTabsProps {
   tabs: TabProps[]
-  variant?: "shared-pill" | "underline-slide" | "flipping-content" | "staggered-links" | "vertical-dock"
+  variant?: "shared-pill" | "underline-slide" | "flipping-content" | "staggered-links" | "vertical-dock" | "wave" | "morphing-indicator"
   activeTab: string
   onTabChange: (id: string) => void
   children?: React.ReactNode
@@ -141,6 +141,58 @@ function VerticalDock({ tabs, activeTab, onTabChange }: SharedTabsProps) {
     )
 }
 
+function WaveTabs({ tabs, activeTab, onTabChange }: SharedTabsProps) {
+    return (
+      <div className="flex bg-gray-100 rounded-lg p-1 overflow-hidden">
+         {tabs.map((tab) => (
+            <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className="relative flex-1 px-4 py-2 text-sm font-medium z-10 transition-colors"
+            >
+                {activeTab === tab.id && (
+                    <motion.div
+                        layoutId="wave-bg"
+                        className="absolute inset-0 bg-blue-500 rounded-md -z-10"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    >
+                        {/* Wave SVG or CSS effect could go here for more complex visual */}
+                        <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/20 rounded-b-md" />
+                    </motion.div>
+                )}
+                <span className={cn(activeTab === tab.id ? "text-white" : "text-gray-600")}>{tab.label}</span>
+            </button>
+         ))}
+      </div>
+    )
+}
+
+function MorphingIndicator({ tabs, activeTab, onTabChange }: SharedTabsProps) {
+    return (
+        <div className="flex gap-8 relative pb-2 border-b border-gray-200">
+            {tabs.map((tab) => (
+                <button
+                    key={tab.id}
+                    onClick={() => onTabChange(tab.id)}
+                    className={cn(
+                        "relative px-2 py-1 transition-colors",
+                        activeTab === tab.id ? "text-primary font-semibold" : "text-gray-500"
+                    )}
+                >
+                    {tab.label}
+                    {activeTab === tab.id && (
+                        <motion.div
+                            layoutId="morph-dot"
+                            className="absolute -bottom-1.5 left-1/2 w-1.5 h-1.5 bg-primary rounded-full -translate-x-1/2"
+                            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                        />
+                    )}
+                </button>
+            ))}
+        </div>
+    )
+}
+
 export function SharedTabs({
   tabs,
   variant = "shared-pill",
@@ -153,6 +205,8 @@ export function SharedTabs({
   if (variant === "flipping-content") return <FlippingContent tabs={tabs} activeTab={activeTab} onTabChange={onTabChange}>{children}</FlippingContent>
   if (variant === "staggered-links") return <StaggeredLinks tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
   if (variant === "vertical-dock") return <VerticalDock tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
+  if (variant === "wave") return <WaveTabs tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
+  if (variant === "morphing-indicator") return <MorphingIndicator tabs={tabs} activeTab={activeTab} onTabChange={onTabChange} />
 
   return null
 }

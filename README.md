@@ -25,17 +25,25 @@ People don’t fall in love with components. They fall in love with how somethin
 We have expanded our registry with a comprehensive set of "Sleek" animated components and layout blocks, designed with a unified spring physics profile (Snappy, Smooth, Bouncy).
 
 ### Core Components (`registry/ui`)
-- **AnimatedButton**: Magnetic, Shine, Loading Morph, Expandable Icon, 3D Press variants.
+- **AnimatedButton**:
+  - Magnetic, Shine, Loading Morph, Expandable Icon, 3D Press.
+  - Glitch, Pulse-Ring, Slide-Fill.
 - **AnimatedInput**: OTP (Glow, Shake, Slide), Password Dot, Underline Draw, Theme Toggles.
-- **SharedTabs**: Pill, Underline, Flipping, Staggered, Vertical Dock.
+- **SharedTabs**:
+  - Pill, Underline, Flipping, Staggered, Vertical Dock.
+  - Wave, Morphing Indicator.
 - **GooeyToast**: Stack, Swipe, Shrink, Pop, Dot variants.
 - **BentoCard**: Glow, Expansion, Widget, Glass, Tilt variants.
+- **AnimatedLoader**: Circular Spin, Bouncing Dots, Progress Bar, Skeleton.
+- **AnimatedModal**: Scale-Up, Slide-In, Curtain-Reveal.
 
 ### Layout Blocks (`registry/blocks`)
 - **HeroReveal**: Text Mask, Parallax, Waitlist Morph, Video Split, Typewriter AI.
 - **PricingSection**: Toggle, Tier Pop, Comparison Drop, Currency Slider, Staggered Entrance.
 - **Sidebar**: Mac Dock, Glass Rail, Collapsible Accordion, User Profile Pop, Floating Command.
 - **AuthMorph**: Transitioning Login/Sign-up block.
+- **ScrollReveal**: Fade-In, Staggered List, Text Highlight.
+- **DragDropList**: Smooth reorderable list interaction.
 
 ### Hooks (`registry/hooks`)
 - **useMagnetic**: Physics logic for magnetic elements.
