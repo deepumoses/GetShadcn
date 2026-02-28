@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "background-beams",
+  "title": "Background Beams",
+  "description": "Background beams effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/background-beams.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React from \"react\"\n\nexport const BackgroundBeams = ({ className }: { className?: string }) => {\n  return (\n    <div\n      className={cn(\n        \"absolute h-full w-full inset-0 bg-neutral-950\",\n        className,\n      )}\n    >\n      <div className=\"absolute inset-0 bg-neutral-950 [mask-image:linear-gradient(to_bottom,transparent,white)]\">\n        <div className=\"absolute inset-0 bg-neutral-950 [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]\">\n          {/* Beams implementation usually involves multiple SVGs or div layers with animations */}\n          <div className=\"absolute h-full w-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1),transparent)]\" />\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

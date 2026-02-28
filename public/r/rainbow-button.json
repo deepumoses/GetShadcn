@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rainbow-button",
+  "title": "Rainbow Button",
+  "description": "A button with a rainbow gradient effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/rainbow-button.tsx",
+      "content": "\"use client\"\n\nimport React, { CSSProperties } from \"react\"\nimport { cn } from \"@/lib/utils\"\n\ninterface RainbowButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  children: React.ReactNode\n}\n\nexport function RainbowButton({\n  children,\n  className,\n  ...props\n}: RainbowButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"group relative inline-flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-[--color-1] via-[--color-5] to-[--color-1] bg-[length:200%_100%] px-8 font-medium text-white transition-colors [animation-duration:2s] [animation-iteration-count:infinite] [animation-name:rainbow] [animation-timing-function:linear] hover:bg-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800\",\n        className,\n      )}\n      {...props}\n    >\n      <span className=\"relative z-10 flex items-center gap-2\">{children}</span>\n    </button>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

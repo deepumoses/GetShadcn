@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles-text",
+  "title": "Sparkles Text",
+  "description": "A dynamic text that generates continuous sparkles with smooth transitions.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/sparkles-text.tsx",
+      "content": "\"use client\"\n\nimport React, { useEffect, useState } from \"react\"\nimport { motion, useAnimation } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface SparklesTextProps {\n  children: React.ReactNode\n  className?: string\n  sparklesCount?: number\n  colors?: {\n    first: string\n    second: string\n  }\n}\n\nconst DEFAULT_COLORS = {\n  first: \"#9E7AFF\",\n  second: \"#FE8BBB\",\n}\n\nconst random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min\n\nexport const SparklesText = ({\n  children,\n  className,\n  sparklesCount = 10,\n  colors = DEFAULT_COLORS,\n  ...props\n}: SparklesTextProps) => {\n  const [sparkles, setSparkles] = useState<Array<{ id: string; x: number; y: number; size: number; duration: number }>>([])\n\n  useEffect(() => {\n    const generateSparkles = () => {\n      const newSparkles = Array.from({ length: sparklesCount }).map(() => ({\n        id: Math.random().toString(36).substring(7),\n        x: random(0, 100),\n        y: random(0, 100),\n        size: random(10, 20),\n        duration: random(1000, 2000),\n      }))\n      setSparkles(newSparkles)\n    }\n\n    generateSparkles()\n  }, [sparklesCount])\n\n  return (\n    <div className={cn(\"relative inline-block\", className)} {...props}>\n      <span className=\"relative z-10\">{children}</span>\n      {sparkles.map((sparkle) => (\n        <Sparkle\n          key={sparkle.id}\n          color={Math.random() > 0.5 ? colors.first : colors.second}\n          size={sparkle.size}\n          style={{\n            top: `${sparkle.y}%`,\n            left: `${sparkle.x}%`,\n            animationDuration: `${sparkle.duration}ms`,\n          }}\n        />\n      ))}\n    </div>\n  )\n}\n\nconst Sparkle = ({ size, color, style }: { size: number; color: string; style: React.CSSProperties }) => {\n  return (\n    <motion.span\n      initial={{ scale: 0, opacity: 0 }}\n      animate={{ scale: [0, 1, 0], opacity: [0, 1, 0] }}\n      transition={{\n        duration: parseFloat(style.animationDuration as string) / 1000,\n        repeat: Infinity,\n        ease: \"easeInOut\",\n      }}\n      style={{\n        ...style,\n        position: \"absolute\",\n        width: size,\n        height: size,\n        borderRadius: \"50%\",\n        backgroundColor: color,\n        pointerEvents: \"none\",\n        zIndex: 5,\n      }}\n    />\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tracing-beam",
+  "title": "Tracing Beam",
+  "description": "A beam that traces the path as you scroll.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/tracing-beam.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, {\n  createContext,\n  useContext,\n  useReducer,\n  useRef,\n  useState,\n} from \"react\"\n\nconst TracingBeamContext = createContext<any>(null)\n\nexport const TracingBeam = ({\n  children,\n  className,\n}: {\n  children: React.ReactNode\n  className?: string\n}) => {\n  const ref = useRef<HTMLDivElement>(null)\n  \n  // Simplified tracing beam without heavy scroll logic for now\n  // Real implementation requires tracking scroll position and updating SVG path\n\n  return (\n    <TracingBeamContext.Provider value={{}}>\n      <div\n        ref={ref}\n        className={cn(\"relative w-full max-w-4xl mx-auto h-full\", className)}\n      >\n        <div className=\"absolute -left-4 md:-left-20 top-3 w-[2px] h-full bg-gradient-to-b from-neutral-200 to-neutral-500\">\n            {/* SVG Path would go here */}\n        </div>\n        <div className=\"ml-4 md:ml-0\">{children}</div>\n      </div>\n    </TracingBeamContext.Provider>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

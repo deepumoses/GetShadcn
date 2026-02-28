@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "highlighter",
+  "title": "Highlighter",
+  "description": "A text highlighter component.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/highlighter.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport { motion, useMotionTemplate, useMotionValue } from \"motion/react\"\nimport React from \"react\"\n\ninterface HighlighterProps {\n  children: React.ReactNode\n  className?: string\n  refresh?: boolean\n  delay?: number\n  duration?: number\n}\n\nexport function Highlighter({\n  children,\n  className,\n  refresh = false,\n  delay = 0,\n  duration = 0.5,\n}: HighlighterProps) {\n  const [key, setKey] = React.useState(0)\n\n  React.useEffect(() => {\n    setKey((prev) => prev + 1)\n  }, [refresh])\n\n  return (\n    <motion.span\n      key={key}\n      className={cn(\"relative inline-block px-1\", className)}\n      initial={{ backgroundSize: \"0% 100%\" }}\n      animate={{ backgroundSize: \"100% 100%\" }}\n      transition={{\n        duration,\n        delay,\n        ease: \"easeOut\",\n      }}\n      style={{\n        backgroundImage: \"linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)\",\n        backgroundRepeat: \"no-repeat\",\n        backgroundPosition: \"0 88%\",\n      }}\n    >\n      <span className=\"relative z-10\">{children}</span>\n    </motion.span>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

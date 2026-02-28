@@ -1,0 +1,40 @@
+
+> uselayouts@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3001
+   - Network:       http://192.168.0.2:3001
+
+ ✓ Starting...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[MDX] generated files in 41.02389100000005ms
+[MDX] started dev server
+ ✓ Ready in 2s
+ ○ Compiling /demo ...
+ ⨯ ReferenceError: useEffect is not defined
+    at BackgroundGradientAnimation (registry/ui/background-gradient-animation.tsx:45:3)
+  43 |
+  44 |   // simplified animation loop for demo
+> 45 |   useEffect(() => {
+     |   ^
+  46 |     document.body.style.setProperty(
+  47 |       "--gradient-background-start",
+  48 |       gradientBackgroundStart, {
+  digest: '4103150510'
+}
+ GET /demo 500 in 14.1s (compile: 13.3s, render: 806ms)
+ ⨯ ReferenceError: useEffect is not defined
+    at BackgroundGradientAnimation (registry/ui/background-gradient-animation.tsx:45:3)
+  43 |
+  44 |   // simplified animation loop for demo
+> 45 |   useEffect(() => {
+     |   ^
+  46 |     document.body.style.setProperty(
+  47 |       "--gradient-background-start",
+  48 |       gradientBackgroundStart, {
+  digest: '4103150510'
+}
+ GET /demo 500 in 173ms (compile: 10ms, render: 163ms)
+ GET /demo 200 in 401ms (compile: 82ms, render: 320ms)

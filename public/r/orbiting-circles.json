@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbiting-circles",
+  "title": "Orbiting Circles",
+  "description": "Circles orbiting around a center point.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/orbiting-circles.tsx",
+      "content": "\"use client\"\n\nimport { AnimatePresence, motion } from \"motion/react\"\nimport { useCallback, useEffect, useState } from \"react\"\n\ninterface OrbitingCirclesProps {\n  className?: string\n  children?: React.ReactNode\n  reverse?: boolean\n  duration?: number\n  delay?: number\n  radius?: number\n  path?: boolean\n  iconSize?: number\n  speed?: number\n}\n\nexport function OrbitingCircles({\n  className,\n  children,\n  reverse,\n  duration = 20,\n  delay = 10,\n  radius = 50,\n  path = true,\n  iconSize = 30,\n  speed = 1,\n}: OrbitingCirclesProps) {\n  return (\n    <>\n      {path && (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          version=\"1.1\"\n          className=\"pointer-events-none absolute inset-0 h-full w-full\"\n        >\n          <circle\n            className=\"stroke-black/10 stroke-1 dark:stroke-white/10\"\n            cx=\"50%\"\n            cy=\"50%\"\n            r={radius}\n            fill=\"none\"\n            strokeDasharray={\"4 4\"}\n          />\n        </svg>\n      )}\n\n      <div\n        style={\n          {\n            \"--duration\": duration,\n            \"--radius\": radius,\n            \"--delay\": -delay,\n            \"--icon-size\": `${iconSize}px`,\n          } as React.CSSProperties\n        }\n        className={`absolute flex h-full w-full transform-gpu animate-orbit items-center justify-center rounded-full border-none [animation-delay:calc(var(--delay)*1000ms)] ${\n          reverse ? \"[animation-direction:reverse]\" : \"\"\n        }`}\n      >\n        {children}\n      </div>\n    </>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

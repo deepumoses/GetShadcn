@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multi-step-loader-two",
+  "title": "Multi Step Loader Two",
+  "description": "Another variation of multi step loader.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/multi-step-loader-two.tsx",
+      "content": "\"use client\"\n\nimport React, { useEffect, useRef } from \"react\"\nimport { motion, useAnimation, useInView } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport const MultiStepLoaderTwo = ({\n  loadingStates,\n  loading,\n  duration = 2000,\n  loop = true,\n}: {\n  loadingStates: {\n    text: string\n  }[]\n  loading?: boolean\n  duration?: number\n  loop?: boolean\n}) => {\n  const [currentState, setCurrentState] = React.useState(0)\n\n  useEffect(() => {\n    if (!loading) {\n      setCurrentState(0)\n      return\n    }\n    const timeout = setTimeout(() => {\n      setCurrentState((prevState) =>\n        loop\n          ? prevState === loadingStates.length - 1\n            ? 0\n            : prevState + 1\n          : Math.min(prevState + 1, loadingStates.length - 1)\n      )\n    }, duration)\n\n    return () => clearTimeout(timeout)\n  }, [currentState, loading, loop, loadingStates.length, duration])\n\n  return (\n    <div className=\"w-full h-full fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-2xl\">\n      <div className=\"h-96 relative\">\n        <div className=\"h-full flex flex-col justify-center items-start\">\n            {loadingStates.map((state, index) => (\n                <div key={index} className=\"flex gap-2 items-center my-2\">\n                    <div className={cn(\"w-4 h-4 rounded-full border border-neutral-500\", index === currentState && \"bg-black dark:bg-white\")}></div>\n                    <span className={cn(\"text-neutral-500\", index === currentState && \"text-black dark:text-white font-bold\")}>\n                        {state.text}\n                    </span>\n                </div>\n            ))}\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

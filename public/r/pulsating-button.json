@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pulsating-button",
+  "title": "Pulsating Button",
+  "description": "A button with a pulsating animation.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/pulsating-button.tsx",
+      "content": "\"use client\"\n\nimport React, { CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface PulsatingButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  pulseColor?: string\n  duration?: string\n}\n\nexport function PulsatingButton({\n  className,\n  children,\n  pulseColor = \"#0096ff\",\n  duration = \"1.5s\",\n  ...props\n}: PulsatingButtonProps) {\n  return (\n    <button\n      className={cn(\n        \"relative flex cursor-pointer items-center justify-center rounded-full bg-blue-500 px-4 py-2 text-center text-white dark:bg-blue-500 dark:text-black\",\n        className,\n      )}\n      style={\n        {\n          \"--pulse-color\": pulseColor,\n          \"--duration\": duration,\n        } as React.CSSProperties\n      }\n      {...props}\n    >\n      <div className=\"relative z-10\">{children}</div>\n      <div className=\"absolute left-1/2 top-1/2 size-full -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-lg bg-inherit opacity-50\" />\n    </button>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

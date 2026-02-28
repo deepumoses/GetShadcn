@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hyper-text",
+  "title": "Hyper Text",
+  "description": "A text animation that scrambles letters before revealing the final text.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/hyper-text.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState } from \"react\"\nimport { AnimatePresence, motion, Variants } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface HyperTextProps {\n  children: string\n  className?: string\n  duration?: number\n  delay?: number\n  as?: React.ElementType\n  startOnView?: boolean\n  animateOnHover?: boolean\n  characterSet?: string[]\n}\n\nconst DEFAULT_CHARACTER_SET = Object.freeze(\n  \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\".split(\"\"),\n)\n\nconst getRandomInt = (max: number) => Math.floor(Math.random() * max)\n\nexport function HyperText({\n  children,\n  className,\n  duration = 800,\n  delay = 0,\n  as: Component = \"div\",\n  startOnView = false,\n  animateOnHover = true,\n  characterSet = DEFAULT_CHARACTER_SET as string[],\n  ...props\n}: HyperTextProps) {\n  const [displayText, setDisplayText] = useState(children.split(\"\"))\n  const [isAnimating, setIsAnimating] = useState(false)\n  const iterationCount = useRef(0)\n  const elementRef = useRef<HTMLElement>(null)\n\n  const handleAnimation = () => {\n    if (isAnimating) return\n\n    setIsAnimating(true)\n    iterationCount.current = 0\n\n    const maxIterations = children.length\n    const intervalDuration = duration / maxIterations\n\n    const interval = setInterval(() => {\n      setDisplayText((currentText) =>\n        currentText.map((letter, i) => {\n          if (letter === \" \") return letter\n          if (i < iterationCount.current) {\n            return children[i]\n          }\n          return characterSet[getRandomInt(characterSet.length)]\n        }),\n      )\n\n      if (iterationCount.current >= maxIterations) {\n        clearInterval(interval)\n        setIsAnimating(false)\n      }\n\n      iterationCount.current += 0.1\n    }, intervalDuration)\n  }\n\n  // Trigger animation on view\n  useEffect(() => {\n    if (!startOnView) return\n\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting) {\n          setTimeout(handleAnimation, delay)\n          observer.disconnect()\n        }\n      },\n      { threshold: 0.1 },\n    )\n\n    if (elementRef.current) {\n      observer.observe(elementRef.current)\n    }\n\n    return () => observer.disconnect()\n  }, [delay, startOnView])\n\n  return (\n    <Component\n      ref={elementRef}\n      className={cn(\"overflow-hidden py-2 text-4xl font-bold\", className)}\n      onMouseEnter={animateOnHover ? handleAnimation : undefined}\n      {...props}\n    >\n      <AnimatePresence>\n        {displayText.map((letter, i) => (\n          <motion.span\n            key={i}\n            className={cn(\"inline-block\", letter === \" \" ? \"w-3\" : \"\")}\n          >\n            {letter}\n          </motion.span>\n        ))}\n      </AnimatePresence>\n    </Component>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

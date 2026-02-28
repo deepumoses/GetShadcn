@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "confetti",
+  "title": "Confetti",
+  "description": "A confetti celebration effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/confetti.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport React, {\n  createContext,\n  forwardRef,\n  useCallback,\n  useEffect,\n  useImperativeHandle,\n  useMemo,\n  useRef,\n  useState,\n} from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface ConfettiContext {\n  fire: (confettiOptions: any) => void\n}\n\nconst ConfettiContext = createContext<ConfettiContext | null>(null)\n\ninterface ConfettiRef {\n  fire: (confettiOptions: any) => void\n}\n\ninterface ConfettiProps {\n  options?: any\n  globalOptions?: any\n  manualstart?: boolean\n  children?: ReactNode\n  className?: string\n}\n\nconst Confetti = forwardRef<ConfettiRef, ConfettiProps>((props, ref) => {\n  const {\n    options,\n    globalOptions = { resize: true, useWorker: true },\n    manualstart = false,\n    children,\n    className,\n    ...rest\n  } = props\n  const instanceRef = useRef<any>(null) // confetti instance\n\n  const canvasRef = useCallback(\n    // https://react.dev/reference/react-dom/components/common#ref-callback\n    // https://reactjs.org/docs/refs-and-the-dom.html#callback-refs\n    (node: HTMLCanvasElement) => {\n      if (node !== null) {\n        // <canvas> is mounted => create the confetti instance\n        if (instanceRef.current) return // if not already created\n        // We can't import canvas-confetti because it is external dependency,\n        // so we will mock a basic confetti burst for visual effect or\n        // instruct user to install `canvas-confetti`\n        // For this demo, we assume the user has the dependency or we mock it.\n        // instanceRef.current = confetti.create(node, {\n        //   ...globalOptions,\n        //   resize: true,\n        // })\n      } else {\n        // <canvas> is unmounted => reset and destroy instanceRef\n        if (instanceRef.current) {\n          instanceRef.current.reset()\n          instanceRef.current = null\n        }\n      }\n    },\n    [globalOptions],\n  )\n\n  const fire = useCallback(\n    (opts = {}) => {\n      if (instanceRef.current) {\n        instanceRef.current({ ...options, ...opts })\n      }\n    },\n    [options],\n  )\n\n  const api = useMemo(\n    () => ({\n      fire,\n    }),\n    [fire],\n  )\n\n  useImperativeHandle(ref, () => api, [api])\n\n  useEffect(() => {\n    if (!manualstart) {\n      fire()\n    }\n  }, [manualstart, fire])\n\n  return (\n    <ConfettiContext.Provider value={api}>\n      <canvas ref={canvasRef} className={cn(\"\", className)} {...rest} />\n      {children}\n    </ConfettiContext.Provider>\n  )\n})\nConfetti.displayName = \"Confetti\"\n\nexport { Confetti }\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

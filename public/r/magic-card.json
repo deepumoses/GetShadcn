@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magic-card",
+  "title": "Magic Card",
+  "description": "A card with a magical hover effect.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/magic-card.tsx",
+      "content": "\"use client\"\n\nimport { useMotionTemplate, useMotionValue, motion } from \"motion/react\"\nimport React, { MouseEvent } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface MagicCardProps {\n  /**\n   * @default <div />\n   * @type ReactElement\n   * @description\n   * The component to be rendered as the card\n   * */\n  children?: React.ReactNode\n\n  /**\n   * @default \"\"\n   * @type string\n   * @description\n   * The class name of the container\n   * */\n  className?: string\n\n  /**\n   * @default \"rgba(255,255,255,0.1)\"\n   * @type string\n   * @description\n   * The background gradient color\n   * */\n  gradientColor?: string\n\n  /**\n   * @default 200\n   * @type number\n   * @description\n   * The size of the gradient\n   * */\n  gradientSize?: number\n\n  /**\n   * @default 0.8\n   * @type number\n   * @description\n   * The opacity of the gradient\n   * */\n  gradientOpacity?: number\n}\n\nexport function MagicCard({\n  children,\n  className,\n  gradientSize = 200,\n  gradientColor = \"#262626\",\n  gradientOpacity = 0.8,\n}: MagicCardProps) {\n  const mouseX = useMotionValue(-gradientSize)\n  const mouseY = useMotionValue(-gradientSize)\n\n  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {\n    const { left, top } = currentTarget.getBoundingClientRect()\n    mouseX.set(clientX - left)\n    mouseY.set(clientY - top)\n  }\n\n  function handleMouseLeave() {\n    mouseX.set(-gradientSize)\n    mouseY.set(-gradientSize)\n  }\n\n  return (\n    <div\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n      className={cn(\n        \"group relative flex size-full overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900 border text-black dark:text-white\",\n        className,\n      )}\n    >\n      <div className=\"relative z-10\">{children}</div>\n      <motion.div\n        className=\"pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100\"\n        style={{\n          background: useMotionTemplate`\n            radial-gradient(\n              ${gradientSize}px circle at ${mouseX}px ${mouseY}px,\n              ${gradientColor},\n              transparent 100%\n            )\n          `,\n          opacity: gradientOpacity,\n        }}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-reveal",
+  "title": "Text Reveal",
+  "description": "Fade in text as you scroll down the page.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/text-reveal.tsx",
+      "content": "\"use client\"\n\nimport { FC, ReactNode, useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface TextRevealProps {\n  children: ReactNode\n  className?: string\n}\n\nexport const TextReveal: FC<TextRevealProps> = ({ children, className }) => {\n  const targetRef = useRef<HTMLDivElement | null>(null)\n\n  const { scrollYProgress } = useScroll({\n    target: targetRef,\n    offset: [\"start end\", \"end start\"],\n  })\n\n  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1])\n\n  return (\n    <div\n      ref={targetRef}\n      className={cn(\n        \"relative z-0 h-[200vh] w-full\",\n        className,\n      )}\n    >\n      <div className={cn(\"sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-[1rem] py-[5rem]\")}>\n        <motion.p\n          style={{ opacity }}\n          className={\"flex flex-wrap p-5 text-2xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl\"}\n        >\n          {children}\n        </motion.p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

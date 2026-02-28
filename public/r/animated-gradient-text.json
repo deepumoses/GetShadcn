@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-gradient-text",
+  "title": "Animated Gradient Text",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/animated-gradient-text.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\nimport { ReactNode } from \"react\"\n\ninterface AnimatedGradientTextProps {\n  children: ReactNode\n  className?: string\n  speed?: number\n  colorFrom?: string\n  colorTo?: string\n}\n\nexport function AnimatedGradientText({\n  children,\n  className,\n  speed = 1,\n  colorFrom = \"#ffaa40\",\n  colorTo = \"#9c40ff\",\n}: AnimatedGradientTextProps) {\n  return (\n    <div\n      className={cn(\n        \"relative flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40\",\n        className,\n      )}\n    >\n      <div\n        className={cn(\n          \"absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[var(--color-from)] via-[var(--color-to)] to-[var(--color-from)] bg-[length:300%_100%] p-[1px]\",\n        )}\n        style={\n          {\n            \"--color-from\": colorFrom,\n            \"--color-to\": colorTo,\n            \"--speed\": `${speed}s`,\n          } as React.CSSProperties\n        }\n      />\n      <div className=\"z-10 flex flex-row items-center justify-center gap-1 bg-white dark:bg-black bg-clip-text text-transparent\">\n         {children}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

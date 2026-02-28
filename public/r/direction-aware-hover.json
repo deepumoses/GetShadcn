@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction-aware-hover",
+  "title": "Direction Aware Hover",
+  "description": "A card that reveals content based on hover direction.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/direction-aware-hover.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, {\n  createContext,\n  useContext,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\"\n\ninterface DirectionAwareHoverProps {\n  imageUrl: string\n  children: React.ReactNode | string\n  childrenClassName?: string\n  imageClassName?: string\n  className?: string\n}\n\nexport const DirectionAwareHover = ({\n  imageUrl,\n  children,\n  childrenClassName,\n  imageClassName,\n  className,\n}: DirectionAwareHoverProps) => {\n  const ref = useRef<HTMLDivElement>(null)\n\n  const [direction, setDirection] = useState<\n    \"top\" | \"bottom\" | \"left\" | \"right\" | string\n  >(\"left\")\n\n  const handleMouseEnter = (\n    event: React.MouseEvent<HTMLDivElement, MouseEvent>,\n  ) => {\n    if (!ref.current) return\n\n    const direction = getDirection(event, ref.current)\n    console.log(\"direction\", direction)\n    switch (direction) {\n      case 0:\n        setDirection(\"top\")\n        break\n      case 1:\n        setDirection(\"right\")\n        break\n      case 2:\n        setDirection(\"bottom\")\n        break\n      case 3:\n        setDirection(\"left\")\n        break\n      default:\n        setDirection(\"left\")\n        break\n    }\n  }\n\n  const getDirection = (\n    ev: React.MouseEvent<HTMLDivElement, MouseEvent>,\n    obj: HTMLElement,\n  ) => {\n    const { width: w, height: h, left, top } = obj.getBoundingClientRect()\n    const x = ev.clientX - left - w / 2\n    const y = ev.clientY - top - h / 2\n    const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4\n    return d\n  }\n\n  return (\n    <div\n      onMouseEnter={handleMouseEnter}\n      ref={ref}\n      className={cn(\n        \"md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative\",\n        className,\n      )}\n    >\n      <div className=\"w-full h-full absolute inset-0 z-0\">\n        <div className=\"absolute inset-0 bg-black/40 z-10 hidden group-hover/card:block transition-all duration-500\" />\n        <img\n          alt=\"image\"\n          className={cn(\n            \"h-full w-full object-cover scale-[1.15]\",\n            imageClassName,\n          )}\n          src={imageUrl}\n        />\n      </div>\n      <div className=\"w-full h-full absolute inset-0 z-10 flex items-center justify-center\">\n        <div\n          className={cn(\n            \"text-white absolute transition-all duration-500\",\n            direction === \"top\"\n              ? \"-translate-y-full group-hover/card:translate-y-0\"\n              : direction === \"bottom\"\n              ? \"translate-y-full group-hover/card:translate-y-0\"\n              : direction === \"left\"\n              ? \"-translate-x-full group-hover/card:translate-x-0\"\n              : direction === \"right\"\n              ? \"translate-x-full group-hover/card:translate-x-0\"\n              : \"\",\n            childrenClassName,\n          )}\n        >\n          {children}\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

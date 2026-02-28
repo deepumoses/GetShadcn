@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "google-gemini-effect",
+  "title": "Google Gemini Effect",
+  "description": "An effect inspired by Google Gemini.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/google-gemini-effect.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport { motion, useMotionValue } from \"motion/react\"\nimport React, { useState, useEffect } from \"react\"\n\nexport const GoogleGeminiEffect = ({\n  pathLengths,\n  title,\n  description,\n  className,\n}: {\n  pathLengths: number[]\n  title?: string\n  description?: string\n  className?: string\n}) => {\n  return (\n    <div className={cn(\"sticky top-0 h-screen w-full overflow-hidden\", className)}>\n        {/* Simplified SVG path drawing effect */}\n      <div className=\"absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]\"></div>\n        <div className=\"flex flex-col items-center justify-center relative z-10 h-full\">\n            <h1 className=\"text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50\">\n                {title || \"Gemini Effect\"}\n            </h1>\n            <p className=\"mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto\">\n                {description || \"Scroll to see the effect\"}\n            </p>\n        </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
