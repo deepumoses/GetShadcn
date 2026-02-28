@@ -1926,4 +1926,562 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "finance-dashboard": {
+    name: "finance-dashboard",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/dashboards/finance-dashboard.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/dashboards/finance-dashboard.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "finance-dashboard"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "task-dashboard": {
+    name: "task-dashboard",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/dashboards/task-dashboard.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/dashboards/task-dashboard.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "task-dashboard"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "collapsible-dashboard": {
+    name: "collapsible-dashboard",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/dashboards/collapsible-dashboard.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/dashboards/collapsible-dashboard.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "collapsible-dashboard"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "saas-admin-panel": {
+    name: "saas-admin-panel",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/dashboards/saas-admin-panel.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/dashboards/saas-admin-panel.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "saas-admin-panel"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "basic-support-chat": {
+    name: "basic-support-chat",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ai-chats/basic-support-chat.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ai-chats/basic-support-chat.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "basic-support-chat"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "animated-streaming-chat": {
+    name: "animated-streaming-chat",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ai-chats/animated-streaming-chat.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ai-chats/animated-streaming-chat.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "animated-streaming-chat"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "developer-dark-mode-chat": {
+    name: "developer-dark-mode-chat",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ai-chats/developer-dark-mode-chat.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ai-chats/developer-dark-mode-chat.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "developer-dark-mode-chat"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "reasoning-chat": {
+    name: "reasoning-chat",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ai-chats/reasoning-chat.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ai-chats/reasoning-chat.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "reasoning-chat"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "simple-checklist": {
+    name: "simple-checklist",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/todos/simple-checklist.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/todos/simple-checklist.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "simple-checklist"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "detailed-task": {
+    name: "detailed-task",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/todos/detailed-task.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/todos/detailed-task.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "detailed-task"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "categorized-filtered": {
+    name: "categorized-filtered",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/todos/categorized-filtered.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/todos/categorized-filtered.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "categorized-filtered"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "basic-board": {
+    name: "basic-board",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/kanban/basic-board.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/kanban/basic-board.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "basic-board"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "agile-scrum": {
+    name: "agile-scrum",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/kanban/agile-scrum.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/kanban/agile-scrum.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "agile-scrum"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "data-dense": {
+    name: "data-dense",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/kanban/data-dense.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/kanban/data-dense.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "data-dense"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "two-column-pricing": {
+    name: "two-column-pricing",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/pricing/two-column.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/pricing/two-column.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "two-column-pricing"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "three-column-saas": {
+    name: "three-column-saas",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/pricing/three-column.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/pricing/three-column.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "three-column-saas"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "single-column-matrix": {
+    name: "single-column-matrix",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/pricing/single-column-matrix.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/pricing/single-column-matrix.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "single-column-matrix"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "basic-hero": {
+    name: "basic-hero",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/landing/basic-hero.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/landing/basic-hero.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "basic-hero"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "waitlist-hero": {
+    name: "waitlist-hero",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/landing/waitlist-hero.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/landing/waitlist-hero.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "waitlist-hero"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "animated-hero": {
+    name: "animated-hero",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/landing/animated-hero.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/landing/animated-hero.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "animated-hero"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "social-proof-features": {
+    name: "social-proof-features",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/landing/social-proof-features.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/landing/social-proof-features.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "social-proof-features"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "single-profile": {
+    name: "single-profile",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/settings/single-profile.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/settings/single-profile.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "single-profile"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "sidebar-split": {
+    name: "sidebar-split",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/settings/sidebar-split.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/settings/sidebar-split.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "sidebar-split"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "multi-section": {
+    name: "multi-section",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/settings/multi-section.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/settings/multi-section.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "multi-section"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "uniform-grid": {
+    name: "uniform-grid",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ecommerce/uniform-grid.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ecommerce/uniform-grid.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "uniform-grid"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "ecommerce-data-dense": {
+    name: "ecommerce-data-dense",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ecommerce/data-dense.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ecommerce/data-dense.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ecommerce-data-dense"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "masonry-discovery": {
+    name: "masonry-discovery",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/ecommerce/masonry-discovery.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/ecommerce/masonry-discovery.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "masonry-discovery"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "text-update": {
+    name: "text-update",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/social/text-update.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/social/text-update.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "text-update"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "media-gallery": {
+    name: "media-gallery",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/social/media-gallery.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/social/media-gallery.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "media-gallery"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "link-share": {
+    name: "link-share",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/social/link-share.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/social/link-share.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "link-share"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "animated-post": {
+    name: "animated-post",
+    description: "",
+    type: "registry:block",
+    registryDependencies: undefined,
+    files: [{
+      path: "registry/pages/social/animated-post.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/pages/social/animated-post.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "animated-post"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   }
