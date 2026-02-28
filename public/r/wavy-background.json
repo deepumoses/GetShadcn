@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wavy-background",
+  "title": "Wavy Background",
+  "description": "A wavy background animation.",
+  "dependencies": [
+    "simplex-noise",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/wavy-background.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, { useEffect, useRef } from \"react\"\nimport { createNoise3D } from \"simplex-noise\"\n\nexport const WavyBackground = ({\n  children,\n  className,\n  containerClassName,\n  colors,\n  waveWidth,\n  backgroundFill,\n  blur = 10,\n  speed = \"fast\",\n  waveOpacity = 0.5,\n  ...props\n}: {\n  children?: React.ReactNode\n  className?: string\n  containerClassName?: string\n  colors?: string[]\n  waveWidth?: number\n  backgroundFill?: string\n  blur?: number\n  speed?: \"slow\" | \"fast\"\n  waveOpacity?: number\n  [key: string]: any\n}) => {\n  const noise = createNoise3D()\n  const canvasRef = useRef<HTMLCanvasElement>(null)\n\n  return (\n    <div\n      className={cn(\n        \"h-screen flex flex-col items-center justify-center\",\n        containerClassName,\n      )}\n    >\n      <canvas\n        className=\"absolute inset-0 z-0\"\n        ref={canvasRef}\n        id=\"canvas\"\n        style={{\n          ...(blur ? { filter: `blur(${blur}px)` } : {}),\n        }}\n      />\n      <div className={cn(\"relative z-10\", className)} {...props}>\n        {children}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

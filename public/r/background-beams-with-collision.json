@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "background-beams-with-collision",
+  "title": "Background Beams With Collision",
+  "description": "Background beams that collide with content.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/background-beams-with-collision.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, { useEffect, useRef, useState } from \"react\"\n\nexport const BackgroundBeamsWithCollision = ({\n  children,\n  className,\n}: {\n  children: React.ReactNode\n  className?: string\n}) => {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const parentRef = useRef<HTMLDivElement>(null)\n\n  return (\n    <div\n      ref={parentRef}\n      className={cn(\n        \"h-96 md:h-[40rem] bg-neutral-950 relative flex items-center w-full justify-center overflow-hidden\",\n        className,\n      )}\n    >\n      {/* Collision logic would go here, involving particle tracking and boundary checks */}\n      <div className=\"absolute inset-0 bg-gradient-to-t from-neutral-950 to-neutral-800 opacity-20\" />\n      <div className=\"relative z-10\">{children}</div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

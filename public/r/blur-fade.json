@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "blur-fade",
+  "title": "Blur Fade",
+  "description": "A blur and fade animation effect.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/blur-fade.tsx",
+      "content": "\"use client\"\n\nimport { AnimatePresence, motion, Variants } from \"motion/react\"\nimport React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface BlurFadeProps {\n  children: React.ReactNode\n  className?: string\n  variant?: {\n    hidden: { y: number }\n    visible: { y: number }\n  }\n  duration?: number\n  delay?: number\n  yOffset?: number\n  inView?: boolean\n  inViewMargin?: string\n  blur?: string\n}\n\nexport function BlurFade({\n  children,\n  className,\n  variant,\n  duration = 0.4,\n  delay = 0,\n  yOffset = 6,\n  inView = false,\n  inViewMargin = \"-50px\",\n  blur = \"6px\",\n}: BlurFadeProps) {\n  const ref = React.useRef(null)\n  const inViewResult = React.useRef(false) // Simplified for demo without useInView hook dep if missing\n\n  // Mocking inView if hook is missing, assuming always in view or using basic effect\n  const [isInView, setIsInView] = React.useState(true)\n\n  const defaultVariants: Variants = {\n    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },\n    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },\n  }\n\n  const combinedVariants = variant || defaultVariants\n\n  return (\n    <AnimatePresence>\n      <motion.div\n        ref={ref}\n        initial=\"hidden\"\n        animate={isInView ? \"visible\" : \"hidden\"}\n        exit=\"hidden\"\n        variants={combinedVariants}\n        transition={{\n          delay: 0.04 + delay,\n          duration,\n          ease: \"easeOut\",\n        }}\n        className={cn(\"md:block\", className)}\n      >\n        {children}\n      </motion.div>\n    </AnimatePresence>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

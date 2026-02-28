@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-spotlight",
+  "title": "Card Spotlight",
+  "description": "A card with a spotlight effect.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/card-spotlight.tsx",
+      "content": "\"use client\"\n\nimport React, { useRef, useState } from \"react\"\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport const CardSpotlight = ({\n  children,\n  className = \"\",\n}: {\n  children: React.ReactNode\n  className?: string\n}) => {\n  const divRef = useRef<HTMLDivElement>(null)\n  const [isFocused, setIsFocused] = useState(false)\n  const [position, setPosition] = useState({ x: 0, y: 0 })\n  const [opacity, setOpacity] = useState(0)\n\n  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {\n    if (!divRef.current || isFocused) return\n\n    const div = divRef.current\n    const rect = div.getBoundingClientRect()\n\n    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top })\n  }\n\n  const handleFocus = () => {\n    setIsFocused(true)\n    setOpacity(1)\n  }\n\n  const handleBlur = () => {\n    setIsFocused(false)\n    setOpacity(0)\n  }\n\n  const handleMouseEnter = () => {\n    setOpacity(1)\n  }\n\n  const handleMouseLeave = () => {\n    setOpacity(0)\n  }\n\n  return (\n    <div\n      ref={divRef}\n      onMouseMove={handleMouseMove}\n      onFocus={handleFocus}\n      onBlur={handleBlur}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      className={cn(\n        \"relative flex h-48 w-48 items-center justify-center overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 px-8 py-16 shadow-2xl\",\n        className,\n      )}\n    >\n      <div\n        className=\"pointer-events-none absolute -inset-px opacity-0 transition duration-300\"\n        style={{\n          opacity,\n          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,\n        }}\n      />\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

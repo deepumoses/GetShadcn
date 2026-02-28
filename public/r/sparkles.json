@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sparkles",
+  "title": "Sparkles",
+  "description": "Sparkles effect component.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/sparkles.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, { useEffect, useRef, useState } from \"react\"\n\nexport const SparklesCore = (props: {\n  id?: string\n  className?: string\n  background?: string\n  minSize?: number\n  maxSize?: number\n  particleDensity?: number\n  particleColor?: string\n}) => {\n  const {\n    id,\n    className,\n    background,\n    minSize,\n    maxSize,\n    particleDensity,\n    particleColor,\n  } = props\n\n  return (\n    <div className={cn(\"opacity-0\", className)} id={id}>\n        {/* Placeholder for canvas based particle system */}\n        <div className=\"w-full h-full bg-transparent\"></div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

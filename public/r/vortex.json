@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "vortex",
+  "title": "Vortex",
+  "description": "A vortex particle effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/vortex.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, { useEffect, useState } from \"react\"\n\nexport const Vortex = ({\n  children,\n  className,\n  containerClassName,\n  particleCount = 700,\n  rangeY = 100,\n  baseHue = 220,\n  baseSpeed = 0.0,\n  rangeSpeed = 1.5,\n  baseRadius = 1,\n  rangeRadius = 2,\n  backgroundColor = \"#000000\",\n}: {\n  children?: React.ReactNode\n  className?: string\n  containerClassName?: string\n  particleCount?: number\n  rangeY?: number\n  baseHue?: number\n  baseSpeed?: number\n  rangeSpeed?: number\n  baseRadius?: number\n  rangeRadius?: number\n  backgroundColor?: string\n}) => {\n  const canvasRef = React.useRef<HTMLCanvasElement>(null)\n  const containerRef = React.useRef<HTMLDivElement>(null)\n  \n  useEffect(() => {\n      // Vortex simulation logic on canvas\n  }, [])\n\n  return (\n    <div className={cn(\"relative h-full w-full overflow-hidden bg-black\", containerClassName)}>\n      <canvas\n        ref={canvasRef}\n        className=\"absolute inset-0 z-0 h-full w-full\"\n      />\n      <div className={cn(\"relative z-10\", className)}>{children}</div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

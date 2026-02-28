@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animated-circular-progress-bar",
+  "title": "Animated Circular Progress Bar",
+  "description": "A circular progress bar with animation.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/animated-circular-progress-bar.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface AnimatedCircularProgressBarProps {\n  max?: number\n  min?: number\n  value?: number\n  gaugePrimaryColor?: string\n  gaugeSecondaryColor?: string\n  className?: string\n}\n\nexport function AnimatedCircularProgressBar({\n  max = 100,\n  min = 0,\n  value = 0,\n  gaugePrimaryColor = \"rgb(79 70 229)\",\n  gaugeSecondaryColor = \"rgba(0, 0, 0, 0.1)\",\n  className,\n}: AnimatedCircularProgressBarProps) {\n  const circumference = 2 * Math.PI * 45\n  const percent = value / (max - min)\n  const offset = circumference - percent * circumference\n\n  return (\n    <div\n      className={cn(\"relative size-40 text-2xl font-semibold\", className)}\n      style={\n        {\n          \"--circle-progress\": `${percent * 100}%`,\n          \"--circle-color\": gaugePrimaryColor,\n          \"--circle-bg\": gaugeSecondaryColor,\n        } as React.CSSProperties\n      }\n    >\n      <svg\n        className=\"size-full -rotate-90 transform stroke-[4px]\"\n        viewBox=\"0 0 100 100\"\n      >\n        <circle\n          className=\"text-[var(--circle-bg)]\"\n          stroke=\"currentColor\"\n          cx=\"50\"\n          cy=\"50\"\n          r=\"45\"\n          fill=\"none\"\n        />\n        <circle\n          className=\"text-[var(--circle-color)] transition-all duration-500 ease-in-out\"\n          stroke=\"currentColor\"\n          cx=\"50\"\n          cy=\"50\"\n          r=\"45\"\n          fill=\"none\"\n          strokeDasharray={circumference}\n          strokeDashoffset={offset}\n          strokeLinecap=\"round\"\n        />\n      </svg>\n      <div className=\"absolute inset-0 flex items-center justify-center\">\n        {Math.round(value)}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

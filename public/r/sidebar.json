@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar",
+  "title": "Sidebar",
+  "description": "A sidebar layout component.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/sidebar.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport const Sidebar = ({\n  children,\n  open,\n  setOpen,\n  animate,\n}: {\n  children: React.ReactNode\n  open?: boolean\n  setOpen?: React.Dispatch<React.SetStateAction<boolean>>\n  animate?: boolean\n}) => {\n  return (\n    <div className={cn(\"flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden\", \"h-[60vh]\")}>\n        {/* Placeholder sidebar structure */}\n        <div className=\"w-64 bg-white dark:bg-neutral-900 h-full border-r border-neutral-200 dark:border-neutral-700 p-4\">\n            Sidebar Content\n        </div>\n        <div className=\"flex-1 p-4\">\n            {children}\n        </div>\n    </div>\n  )\n}\n\nexport const SidebarBody = (props: any) => {\n  return <>{props.children}</>\n}\n\nexport const SidebarLink = (props: any) => {\n  return <div className=\"p-2 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-md cursor-pointer\">{props.link.label}</div>\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

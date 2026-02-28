@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "terminal",
+  "title": "Terminal",
+  "description": "A terminal-like component.",
+  "dependencies": [
+    "motion",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/terminal.tsx",
+      "content": "\"use client\"\n\nimport {\n  motion,\n  MotionProps,\n  HTMLMotionProps,\n} from \"motion/react\"\nimport { useEffect, useRef, useState } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface TerminalProps {\n  children: React.ReactNode\n  className?: string\n}\n\nexport function Terminal({ children, className }: TerminalProps) {\n  return (\n    <div\n      className={cn(\n        \"z-0 h-full w-full rounded-xl border bg-neutral-950 text-white shadow-sm\",\n        className,\n      )}\n    >\n      <div className=\"flex flex-col gap-2 p-4\">\n        <div className=\"flex flex-row gap-2\">\n          <div className=\"h-2 w-2 rounded-full bg-red-500\" />\n          <div className=\"h-2 w-2 rounded-full bg-yellow-500\" />\n          <div className=\"h-2 w-2 rounded-full bg-green-500\" />\n        </div>\n        <div className=\"flex flex-col gap-1 font-mono text-sm\">\n          {children}\n        </div>\n      </div>\n    </div>\n  )\n}\n\ninterface AnimatedSpanProps extends MotionProps {\n  children: React.ReactNode\n  delay?: number\n  className?: string\n}\n\nexport function AnimatedSpan({\n  children,\n  delay = 0,\n  className,\n  ...props\n}: AnimatedSpanProps) {\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: -5 }}\n      animate={{ opacity: 1, y: 0 }}\n      transition={{ duration: 0.3, delay: delay / 1000, ease: \"easeIn\" }}\n      className={cn(\"grid text-sm font-normal tracking-tight\", className)}\n      {...props}\n    >\n      {children}\n    </motion.div>\n  )\n}\n\ninterface TypingAnimationProps extends MotionProps {\n  children: string\n  className?: string\n  duration?: number\n  delay?: number\n  as?: React.ElementType\n}\n\nexport function TerminalTypingAnimation({\n  children,\n  className,\n  duration = 60,\n  delay = 0,\n  as: Component = \"span\",\n  ...props\n}: TypingAnimationProps) {\n  if (Component !== \"span\") {\n    return (\n      <motion.div\n        className={cn(\"font-mono text-sm font-normal tracking-tight\", className)}\n        initial={{ opacity: 0 }}\n        animate={{ opacity: 1 }}\n        transition={{ duration: 0, delay: delay / 1000 }}\n        {...props}\n      >\n        {children}\n      </motion.div>\n    )\n  }\n\n  return (\n    <motion.span\n      className={cn(\"font-mono text-sm font-normal tracking-tight\", className)}\n      initial={{ opacity: 0 }}\n      animate={{ opacity: 1 }}\n      transition={{ duration: 0, delay: delay / 1000 }}\n      {...props}\n    >\n      {children}\n    </motion.span>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

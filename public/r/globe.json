@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "globe",
+  "title": "Globe",
+  "description": "An interactive 3D globe component.",
+  "dependencies": [
+    "cobe",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/globe.tsx",
+      "content": "\"use client\"\n\nimport createGlobe from \"cobe\"\nimport { useEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface GlobeProps {\n  className?: string\n}\n\nexport function Globe({ className }: GlobeProps) {\n  const canvasRef = useRef<HTMLCanvasElement>(null)\n\n  useEffect(() => {\n    let phi = 0\n\n    if (!canvasRef.current) return\n\n    const globe = createGlobe(canvasRef.current, {\n      devicePixelRatio: 2,\n      width: 600 * 2,\n      height: 600 * 2,\n      phi: 0,\n      theta: 0,\n      dark: 1,\n      diffuse: 1.2,\n      mapSamples: 16000,\n      mapBrightness: 6,\n      baseColor: [0.3, 0.3, 0.3],\n      markerColor: [0.1, 0.8, 1],\n      glowColor: [1, 1, 1],\n      markers: [\n        // longitude latitude\n        { location: [37.7595, -122.4367], size: 0.03 },\n        { location: [40.7128, -74.006], size: 0.1 },\n      ],\n      onRender: (state) => {\n        // Called on every animation frame.\n        // `state` will be an empty object, return updated params.\n        state.phi = phi\n        phi += 0.01\n      },\n    })\n\n    return () => {\n      globe.destroy()\n    }\n  }, [])\n\n  return (\n    <div\n      className={cn(\n        \"relative flex h-full w-full max-w-[600px] items-center justify-center overflow-hidden rounded-lg border bg-background pb-40 pt-8 md:pb-60 md:pt-16\",\n        className,\n      )}\n    >\n      <canvas\n        ref={canvasRef}\n        style={{\n          width: 600,\n          height: 600,\n          maxWidth: \"100%\",\n          aspectRatio: 1,\n        }}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

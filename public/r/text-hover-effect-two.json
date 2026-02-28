@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-hover-effect-two",
+  "title": "Text Hover Effect Two",
+  "description": "Another variation of text hover effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/text-hover-effect-two.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React from \"react\"\n\nexport const TextHoverEffectTwo = ({\n  text,\n  duration,\n}: {\n  text: string\n  duration?: number\n  automatic?: boolean\n}) => {\n  return (\n    <div className={cn(\"text-center\")}>\n        <h1 className=\"text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-500 opacity-20 hover:opacity-100 transition-opacity duration-500\">\n            {text}\n        </h1>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

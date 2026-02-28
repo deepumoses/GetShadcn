@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shine-border",
+  "title": "Shine Border",
+  "description": "A shining border animation effect.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/shine-border.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype TColorProp = string | string[]\n\ninterface ShineBorderProps {\n  borderRadius?: number\n  borderWidth?: number\n  duration?: number\n  color?: TColorProp\n  className?: string\n  children: React.ReactNode\n}\n\nexport function ShineBorder({\n  borderRadius = 8,\n  borderWidth = 1,\n  duration = 14,\n  color = \"#000000\",\n  className,\n  children,\n}: ShineBorderProps) {\n  return (\n    <div\n      style={\n        {\n          \"--border-radius\": `${borderRadius}px`,\n        } as React.CSSProperties\n      }\n      className={cn(\n        \"relative min-h-[60px] w-fit min-w-[300px] place-items-center rounded-[--border-radius] bg-white p-3 text-black dark:bg-black dark:text-white\",\n        className,\n      )}\n    >\n      <div\n        style={\n          {\n            \"--border-width\": `${borderWidth}px`,\n            \"--border-radius\": `${borderRadius}px`,\n            \"--duration\": `${duration}s`,\n            \"--mask-linear-gradient\": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,\n            \"--background-radial-gradient\": `radial-gradient(transparent,transparent, ${\n              Array.isArray(color) ? color.join(\",\") : color\n            },transparent,transparent)`,\n          } as React.CSSProperties\n        }\n        className={`before:bg-shine-size pointer-events-none absolute inset-0 size-full rounded-[--border-radius] p-[--border-width] will-change-[background-position] content-[''] before:absolute before:inset-[-100%] before:animate-shine before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:![mask-composite:xor] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine`}\n      ></div>\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

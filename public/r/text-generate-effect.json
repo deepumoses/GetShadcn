@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-generate-effect",
+  "title": "Text Generate Effect",
+  "description": "Text that generates/types itself out.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/text-generate-effect.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport React, {\n  useEffect,\n  useState,\n} from \"react\"\n\nexport const TextGenerateEffect = ({\n  words,\n  className,\n}: {\n  words: string\n  className?: string\n}) => {\n  const [currentWord, setCurrentWord] = useState(\"\")\n\n  useEffect(() => {\n    let i = 0\n    const interval = setInterval(() => {\n      if (i < words.length) {\n        setCurrentWord((prev) => prev + words.charAt(i))\n        i++\n      } else {\n        clearInterval(interval)\n      }\n    }, 30)\n    return () => clearInterval(interval)\n  }, [words])\n\n  return (\n    <div className={cn(\"font-bold\", className)}>\n      <div className=\"mt-4\">\n        <div className=\" dark:text-white text-black text-2xl leading-snug tracking-wide\">\n          {currentWord}\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
