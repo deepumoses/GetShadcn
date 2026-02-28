@@ -2,39 +2,20 @@
 > uselayouts@0.1.0 dev
 > next dev
 
- ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
    ▲ Next.js 16.0.10 (Turbopack)
-   - Local:         http://localhost:3001
-   - Network:       http://192.168.0.2:3001
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.0.2:3000
 
  ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
-[MDX] generated files in 41.02389100000005ms
+[MDX] generated files in 32.066242999999986ms
 [MDX] started dev server
- ✓ Ready in 2s
- ○ Compiling /demo ...
- ⨯ ReferenceError: useEffect is not defined
-    at BackgroundGradientAnimation (registry/ui/background-gradient-animation.tsx:45:3)
-  43 |
-  44 |   // simplified animation loop for demo
-> 45 |   useEffect(() => {
-     |   ^
-  46 |     document.body.style.setProperty(
-  47 |       "--gradient-background-start",
-  48 |       gradientBackgroundStart, {
-  digest: '4103150510'
-}
- GET /demo 500 in 14.1s (compile: 13.3s, render: 806ms)
- ⨯ ReferenceError: useEffect is not defined
-    at BackgroundGradientAnimation (registry/ui/background-gradient-animation.tsx:45:3)
-  43 |
-  44 |   // simplified animation loop for demo
-> 45 |   useEffect(() => {
-     |   ^
-  46 |     document.body.style.setProperty(
-  47 |       "--gradient-background-start",
-  48 |       gradientBackgroundStart, {
-  digest: '4103150510'
-}
- GET /demo 500 in 173ms (compile: 10ms, render: 163ms)
- GET /demo 200 in 401ms (compile: 82ms, render: 320ms)
+ ✓ Ready in 1086ms
+ ○ Compiling / ...
+ GET / 200 in 11.8s (compile: 10.6s, render: 1248ms)
+ ⨯ upstream image response failed for https://pbs.twimg.com/profile_images/1978915706285576192/DHDAvdLj_400x400.jpg 404

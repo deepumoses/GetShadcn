@@ -8,7 +8,11 @@
       "type": "registry:component",
       "title": "3D Book",
       "description": "An interactive 3D book component with page flip animations.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/default/example/3d-book.tsx",
@@ -117,7 +121,11 @@
       "type": "registry:component",
       "title": "Discrete Tabs",
       "description": "A tab component with discrete sliding animations.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/default/example/discrete-tabs.tsx",
@@ -160,7 +168,9 @@
         "clsx",
         "tailwind-merge"
       ],
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default/example/expandable-gallery.tsx",
@@ -222,7 +232,9 @@
         "clsx",
         "tailwind-merge"
       ],
-      "registryDependencies": ["input"],
+      "registryDependencies": [
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default/example/inline-edit.tsx",
@@ -261,7 +273,9 @@
         "clsx",
         "tailwind-merge"
       ],
-      "registryDependencies": ["input"],
+      "registryDependencies": [
+        "input"
+      ],
       "files": [
         {
           "path": "registry/default/example/morphing-input.tsx",
@@ -374,7 +388,9 @@
         "clsx",
         "tailwind-merge"
       ],
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default/example/status-button.tsx",
@@ -413,7 +429,10 @@
         "clsx",
         "tailwind-merge"
       ],
-      "registryDependencies": ["input", "button"],
+      "registryDependencies": [
+        "input",
+        "button"
+      ],
       "files": [
         {
           "path": "registry/default/example/stacked-list.tsx",
@@ -449,7 +468,11 @@
       "type": "registry:component",
       "title": "Fluid Expanding Grid",
       "description": "A responsive gallery grid that fluidly shifts and expands items using motion layout.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/default/example/fluid-expanding-grid.tsx",
@@ -519,7 +542,11 @@
       "type": "registry:component",
       "title": "Hyper Text",
       "description": "A text animation that scrambles letters before revealing the final text.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/hyper-text.tsx",
@@ -532,7 +559,10 @@
       "type": "registry:component",
       "title": "Typing Animation",
       "description": "Characters appearing in typed animation.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/typing-animation.tsx",
@@ -545,7 +575,11 @@
       "type": "registry:component",
       "title": "Text Reveal",
       "description": "Fade in text as you scroll down the page.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/text-reveal.tsx",
@@ -558,7 +592,11 @@
       "type": "registry:component",
       "title": "Sparkles Text",
       "description": "A dynamic text that generates continuous sparkles with smooth transitions.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sparkles-text.tsx",
@@ -571,7 +609,11 @@
       "type": "registry:component",
       "title": "Morphing Text",
       "description": "A dynamic text morphing component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/morphing-text.tsx",
@@ -584,7 +626,11 @@
       "type": "registry:component",
       "title": "Spinning Text",
       "description": "Text that spins in a circular motion.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/spinning-text.tsx",
@@ -597,7 +643,10 @@
       "type": "registry:component",
       "title": "Animated Gradient Text",
       "description": "An animated gradient background which transitions between colors for text.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-gradient-text.tsx",
@@ -610,7 +659,11 @@
       "type": "registry:component",
       "title": "Text Animate",
       "description": "A text animation component that animates text using a variety of different animations.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/text-animate.tsx",
@@ -623,7 +676,11 @@
       "type": "registry:component",
       "title": "Word Rotate",
       "description": "A rotating text animation component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/word-rotate.tsx",
@@ -636,7 +693,11 @@
       "type": "registry:component",
       "title": "Number Ticker",
       "description": "An animated number ticker component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/number-ticker.tsx",
@@ -649,7 +710,10 @@
       "type": "registry:component",
       "title": "Meteors",
       "description": "A meteor shower effect background.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/meteors.tsx",
@@ -662,7 +726,10 @@
       "type": "registry:component",
       "title": "Grid Pattern",
       "description": "A background grid pattern component.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/grid-pattern.tsx",
@@ -675,7 +742,10 @@
       "type": "registry:component",
       "title": "Dot Pattern",
       "description": "A background dot pattern component.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/dot-pattern.tsx",
@@ -688,7 +758,10 @@
       "type": "registry:component",
       "title": "Retro Grid",
       "description": "A retro-style grid background animation.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/retro-grid.tsx",
@@ -701,7 +774,10 @@
       "type": "registry:component",
       "title": "Ripple",
       "description": "A ripple effect animation component.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/ripple.tsx",
@@ -714,7 +790,10 @@
       "type": "registry:component",
       "title": "Neon Gradient Card",
       "description": "A card with a neon gradient border effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/neon-gradient-card.tsx",
@@ -727,7 +806,11 @@
       "type": "registry:component",
       "title": "Magic Card",
       "description": "A card with a magical hover effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/magic-card.tsx",
@@ -740,7 +823,10 @@
       "type": "registry:component",
       "title": "Marquee",
       "description": "An infinite scrolling marquee component.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/marquee.tsx",
@@ -753,7 +839,10 @@
       "type": "registry:component",
       "title": "Tweet Card",
       "description": "A component to display tweets.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/tweet-card.tsx",
@@ -766,7 +855,11 @@
       "type": "registry:component",
       "title": "Bento Grid",
       "description": "A bento-style grid layout component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/bento-grid.tsx",
@@ -779,7 +872,11 @@
       "type": "registry:component",
       "title": "Dock",
       "description": "A macOS-style dock component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/dock.tsx",
@@ -792,7 +889,11 @@
       "type": "registry:component",
       "title": "Globe",
       "description": "An interactive 3D globe component.",
-      "dependencies": ["cobe", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "cobe",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/globe.tsx",
@@ -805,7 +906,11 @@
       "type": "registry:component",
       "title": "Icon Cloud",
       "description": "A 3D interactive icon cloud.",
-      "dependencies": ["next-themes", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "next-themes",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/icon-cloud.tsx",
@@ -818,7 +923,12 @@
       "type": "registry:component",
       "title": "Hero Video Dialog",
       "description": "A hero component with a video dialog.",
-      "dependencies": ["motion", "lucide-react", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/hero-video-dialog.tsx",
@@ -831,7 +941,11 @@
       "type": "registry:component",
       "title": "Scroll Based Velocity",
       "description": "Text that scrolls based on scroll velocity.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/scroll-based-velocity.tsx",
@@ -844,7 +958,11 @@
       "type": "registry:component",
       "title": "Terminal",
       "description": "A terminal-like component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/terminal.tsx",
@@ -857,7 +975,11 @@
       "type": "registry:component",
       "title": "Blur Fade",
       "description": "A blur and fade animation effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/blur-fade.tsx",
@@ -870,7 +992,10 @@
       "type": "registry:component",
       "title": "Border Beam",
       "description": "A border beam animation effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/border-beam.tsx",
@@ -883,7 +1008,10 @@
       "type": "registry:component",
       "title": "Shine Border",
       "description": "A shining border animation effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/shine-border.tsx",
@@ -896,7 +1024,10 @@
       "type": "registry:component",
       "title": "Rainbow Button",
       "description": "A button with a rainbow gradient effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/rainbow-button.tsx",
@@ -909,7 +1040,10 @@
       "type": "registry:component",
       "title": "Pulsating Button",
       "description": "A button with a pulsating animation.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/pulsating-button.tsx",
@@ -922,7 +1056,11 @@
       "type": "registry:component",
       "title": "Interactive Hover Button",
       "description": "A button with an interactive hover effect.",
-      "dependencies": ["lucide-react", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "lucide-react",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/interactive-hover-button.tsx",
@@ -935,7 +1073,10 @@
       "type": "registry:component",
       "title": "Animated Shiny Text",
       "description": "Text with a shiny animation effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-shiny-text.tsx",
@@ -948,7 +1089,10 @@
       "type": "registry:component",
       "title": "Confetti",
       "description": "A confetti celebration effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/confetti.tsx",
@@ -961,7 +1105,10 @@
       "type": "registry:component",
       "title": "Particles",
       "description": "A particle background effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/particles.tsx",
@@ -974,7 +1121,11 @@
       "type": "registry:component",
       "title": "Lens",
       "description": "A magnifying lens effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/lens.tsx",
@@ -987,7 +1138,11 @@
       "type": "registry:component",
       "title": "Pointer",
       "description": "A custom pointer component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/pointer.tsx",
@@ -1000,7 +1155,11 @@
       "type": "registry:component",
       "title": "Smooth Cursor",
       "description": "A smooth custom cursor.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/smooth-cursor.tsx",
@@ -1013,7 +1172,9 @@
       "type": "registry:component",
       "title": "Orbiting Circles",
       "description": "Circles orbiting around a center point.",
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "registry/ui/orbiting-circles.tsx",
@@ -1026,7 +1187,10 @@
       "type": "registry:component",
       "title": "Avatar Circles",
       "description": "A group of avatars displayed in circles.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/avatar-circles.tsx",
@@ -1039,7 +1203,11 @@
       "type": "registry:component",
       "title": "Animated Beam",
       "description": "An animated beam connecting two points.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-beam.tsx",
@@ -1052,7 +1220,9 @@
       "type": "registry:component",
       "title": "Animated List",
       "description": "A list with animated items.",
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-list.tsx",
@@ -1065,7 +1235,10 @@
       "type": "registry:component",
       "title": "Animated Circular Progress Bar",
       "description": "A circular progress bar with animation.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-circular-progress-bar.tsx",
@@ -1078,7 +1251,11 @@
       "type": "registry:component",
       "title": "Highlighter",
       "description": "A text highlighter component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/highlighter.tsx",
@@ -1091,7 +1268,11 @@
       "type": "registry:component",
       "title": "Card Spotlight",
       "description": "A card with a spotlight effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/card-spotlight.tsx",
@@ -1104,7 +1285,11 @@
       "type": "registry:component",
       "title": "Card Hover Effect",
       "description": "A grid of cards with hover effects.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/card-hover-effect.tsx",
@@ -1117,7 +1302,10 @@
       "type": "registry:component",
       "title": "Direction Aware Hover",
       "description": "A card that reveals content based on hover direction.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/direction-aware-hover.tsx",
@@ -1130,7 +1318,11 @@
       "type": "registry:component",
       "title": "Infinite Moving Cards",
       "description": "A set of cards moving infinitely.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/infinite-moving-cards.tsx",
@@ -1143,7 +1335,11 @@
       "type": "registry:component",
       "title": "Sticky Scroll Reveal",
       "description": "Content that sticks and reveals as you scroll.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sticky-scroll-reveal.tsx",
@@ -1156,7 +1352,11 @@
       "type": "registry:component",
       "title": "Canvas Reveal Effect",
       "description": "A canvas-based reveal effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/canvas-reveal-effect.tsx",
@@ -1169,7 +1369,11 @@
       "type": "registry:component",
       "title": "Container Scroll Animation",
       "description": "A container that animates on scroll.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/container-scroll-animation.tsx",
@@ -1182,7 +1386,11 @@
       "type": "registry:component",
       "title": "3D Pin",
       "description": "A 3D pin animation effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/3d-pin.tsx",
@@ -1195,7 +1403,10 @@
       "type": "registry:component",
       "title": "Text Generate Effect",
       "description": "Text that generates/types itself out.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/text-generate-effect.tsx",
@@ -1208,7 +1419,11 @@
       "type": "registry:component",
       "title": "Images Slider",
       "description": "A simple image slider component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/images-slider.tsx",
@@ -1221,7 +1436,11 @@
       "type": "registry:component",
       "title": "Animated Tabs",
       "description": "Tabs with animated transitions.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/animated-tabs.tsx",
@@ -1234,7 +1453,10 @@
       "type": "registry:component",
       "title": "Tracing Beam",
       "description": "A beam that traces the path as you scroll.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/tracing-beam.tsx",
@@ -1247,7 +1469,11 @@
       "type": "registry:component",
       "title": "Moving Border",
       "description": "A component with a moving border effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/moving-border.tsx",
@@ -1260,7 +1486,10 @@
       "type": "registry:component",
       "title": "Background Gradient",
       "description": "A background gradient animation.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/background-gradient.tsx",
@@ -1273,7 +1502,10 @@
       "type": "registry:component",
       "title": "Background Gradient Animation",
       "description": "An animated background gradient.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/background-gradient-animation.tsx",
@@ -1286,7 +1518,10 @@
       "type": "registry:component",
       "title": "Background Beams",
       "description": "Background beams effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/background-beams.tsx",
@@ -1299,7 +1534,10 @@
       "type": "registry:component",
       "title": "Background Beams With Collision",
       "description": "Background beams that collide with content.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/background-beams-with-collision.tsx",
@@ -1312,7 +1550,11 @@
       "type": "registry:component",
       "title": "Google Gemini Effect",
       "description": "An effect inspired by Google Gemini.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/google-gemini-effect.tsx",
@@ -1325,7 +1567,10 @@
       "type": "registry:component",
       "title": "Vortex",
       "description": "A vortex particle effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/vortex.tsx",
@@ -1338,7 +1583,11 @@
       "type": "registry:component",
       "title": "Wavy Background",
       "description": "A wavy background animation.",
-      "dependencies": ["simplex-noise", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "simplex-noise",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/wavy-background.tsx",
@@ -1351,7 +1600,11 @@
       "type": "registry:component",
       "title": "Lamp",
       "description": "A lamp spotlight effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/lamp.tsx",
@@ -1364,7 +1617,10 @@
       "type": "registry:component",
       "title": "Sparkles",
       "description": "Sparkles effect component.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sparkles.tsx",
@@ -1377,7 +1633,10 @@
       "type": "registry:component",
       "title": "Text Hover Effect",
       "description": "Text reveal on hover effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/text-hover-effect.tsx",
@@ -1390,7 +1649,11 @@
       "type": "registry:component",
       "title": "Multi Step Loader",
       "description": "A loader with multiple steps.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/multi-step-loader.tsx",
@@ -1403,7 +1666,11 @@
       "type": "registry:component",
       "title": "Sidebar",
       "description": "A sidebar layout component.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sidebar.tsx",
@@ -1416,7 +1683,11 @@
       "type": "registry:component",
       "title": "Layout Grid",
       "description": "A grid layout with expanding items.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/layout-grid.tsx",
@@ -1429,7 +1700,11 @@
       "type": "registry:component",
       "title": "Parallax Scroll",
       "description": "A parallax scrolling image grid.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/parallax-scroll.tsx",
@@ -1442,7 +1717,10 @@
       "type": "registry:component",
       "title": "Infinite Moving Cards Two",
       "description": "Another variation of infinite moving cards.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/infinite-moving-cards-two.tsx",
@@ -1455,7 +1733,11 @@
       "type": "registry:component",
       "title": "Container Scroll Animation Two",
       "description": "Another variation of container scroll animation.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/container-scroll-animation-two.tsx",
@@ -1468,7 +1750,11 @@
       "type": "registry:component",
       "title": "Parallax Scroll Two",
       "description": "Another variation of parallax scroll.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/parallax-scroll-two.tsx",
@@ -1481,7 +1767,10 @@
       "type": "registry:component",
       "title": "Background Gradient Two",
       "description": "Another variation of background gradient.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/background-gradient-two.tsx",
@@ -1494,7 +1783,11 @@
       "type": "registry:component",
       "title": "Lamp Two",
       "description": "Another variation of lamp effect.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/lamp-two.tsx",
@@ -1507,7 +1800,10 @@
       "type": "registry:component",
       "title": "Sparkles Two",
       "description": "Another variation of sparkles effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sparkles-two.tsx",
@@ -1520,7 +1816,10 @@
       "type": "registry:component",
       "title": "Text Hover Effect Two",
       "description": "Another variation of text hover effect.",
-      "dependencies": ["clsx", "tailwind-merge"],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/text-hover-effect-two.tsx",
@@ -1533,7 +1832,11 @@
       "type": "registry:component",
       "title": "Multi Step Loader Two",
       "description": "Another variation of multi step loader.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/multi-step-loader-two.tsx",
@@ -1546,11 +1849,424 @@
       "type": "registry:component",
       "title": "Sidebar Two",
       "description": "Another variation of sidebar.",
-      "dependencies": ["motion", "clsx", "tailwind-merge"],
+      "dependencies": [
+        "motion",
+        "clsx",
+        "tailwind-merge"
+      ],
       "files": [
         {
           "path": "registry/ui/sidebar-two.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "finance-dashboard",
+      "type": "registry:block",
+      "title": "Finance Dashboard",
+      "dependencies": [
+        "recharts"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/dashboards/finance-dashboard.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "task-dashboard",
+      "type": "registry:block",
+      "title": "Task Dashboard",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/dashboards/task-dashboard.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "collapsible-dashboard",
+      "type": "registry:block",
+      "title": "Collapsible Dashboard",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/dashboards/collapsible-dashboard.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "saas-admin-panel",
+      "type": "registry:block",
+      "title": "SaaS Admin Panel",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/dashboards/saas-admin-panel.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "basic-support-chat",
+      "type": "registry:block",
+      "title": "Basic Support Chat",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/ai-chats/basic-support-chat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "animated-streaming-chat",
+      "type": "registry:block",
+      "title": "Animated Streaming Chat",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/ai-chats/animated-streaming-chat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "developer-dark-mode-chat",
+      "type": "registry:block",
+      "title": "Developer Dark Mode Chat",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/ai-chats/developer-dark-mode-chat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-chat",
+      "type": "registry:block",
+      "title": "Reasoning Chat",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/ai-chats/reasoning-chat.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "simple-checklist",
+      "type": "registry:block",
+      "title": "Simple Checklist",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/todos/simple-checklist.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "detailed-task",
+      "type": "registry:block",
+      "title": "Detailed Task",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/todos/detailed-task.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "categorized-filtered",
+      "type": "registry:block",
+      "title": "Categorized Filtered",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/todos/categorized-filtered.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "basic-board",
+      "type": "registry:block",
+      "title": "Basic Board",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/kanban/basic-board.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "agile-scrum",
+      "type": "registry:block",
+      "title": "Agile Scrum",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/kanban/agile-scrum.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "data-dense",
+      "type": "registry:block",
+      "title": "Data Dense",
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/utilities"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/kanban/data-dense.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "two-column-pricing",
+      "type": "registry:block",
+      "title": "Two Column Pricing",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/pricing/two-column.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "three-column-saas",
+      "type": "registry:block",
+      "title": "Three Column SaaS",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/pricing/three-column.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "single-column-matrix",
+      "type": "registry:block",
+      "title": "Single Column Matrix",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/pricing/single-column-matrix.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "basic-hero",
+      "type": "registry:block",
+      "title": "Basic Hero",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/landing/basic-hero.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "waitlist-hero",
+      "type": "registry:block",
+      "title": "Waitlist Hero",
+      "dependencies": [
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/landing/waitlist-hero.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "animated-hero",
+      "type": "registry:block",
+      "title": "Animated Hero",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/landing/animated-hero.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "social-proof-features",
+      "type": "registry:block",
+      "title": "Social Proof Features",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/landing/social-proof-features.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "single-profile",
+      "type": "registry:block",
+      "title": "Single Profile",
+      "dependencies": [
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/settings/single-profile.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-split",
+      "type": "registry:block",
+      "title": "Sidebar Split",
+      "dependencies": [
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/settings/sidebar-split.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "multi-section",
+      "type": "registry:block",
+      "title": "Multi Section",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/settings/multi-section.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "uniform-grid",
+      "type": "registry:block",
+      "title": "Uniform Grid",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/ecommerce/uniform-grid.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "ecommerce-data-dense",
+      "type": "registry:block",
+      "title": "eCommerce Data Dense",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/pages/ecommerce/data-dense.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "masonry-discovery",
+      "type": "registry:block",
+      "title": "Masonry Discovery",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/ecommerce/masonry-discovery.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "text-update",
+      "type": "registry:block",
+      "title": "Text Update",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/social/text-update.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "media-gallery",
+      "type": "registry:block",
+      "title": "Media Gallery",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/social/media-gallery.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "link-share",
+      "type": "registry:block",
+      "title": "Link Share",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/social/link-share.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "animated-post",
+      "type": "registry:block",
+      "title": "Animated Post",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/pages/social/animated-post.tsx",
+          "type": "registry:block"
         }
       ]
     }
